@@ -1,4 +1,4 @@
-import { QiitaArticles } from "@/app/types";
+import { QiitaArticles } from "@/app/types"
 
 async function getArticles() {
   const url = " https://qiita.com//api/v2/authenticated_user/items"
@@ -6,8 +6,8 @@ async function getArticles() {
   const res = await fetch(url, {
     // cache: "no-store",
     headers: {
-      Authorization: `Bearer ${accessToken}`
-    }
+      Authorization: `Bearer ${accessToken}`,
+    },
   })
 
   if (!res.ok) {

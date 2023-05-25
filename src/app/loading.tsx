@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { ThreeDots } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner"
 
 const Loading = () => (
   <div className="flex justify-center items-center">

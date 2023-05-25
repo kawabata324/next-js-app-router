@@ -17,8 +17,8 @@ import {
   QiitaTitle,
   QiitaUpdatedAt,
   QiitaURL,
-  QiitaUser
-} from "@/app/libs/qiita/type";
+  QiitaUser,
+} from "@/app/libs/qiita/type"
 
 export type QiitaArticle = {
   rendered_body: QiitaRenderedBody
@@ -33,8 +33,8 @@ export type QiitaArticle = {
   reactions_count: QiitaReactionCount
   stocksCount: QiitaStocksCount
   tags: QiitaTags
-  title: QiitaTitle,
-  updated_at: QiitaUpdatedAt,
+  title: QiitaTitle
+  updated_at: QiitaUpdatedAt
   url: QiitaURL
   user: QiitaUser
   page_view_count: QiitaPageViewsCount

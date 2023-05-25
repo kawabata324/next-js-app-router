@@ -34,7 +34,7 @@ export type QiitaReactionCount = number
 export type QiitaStocksCount = number
 
 // 記事についたタグ一覧
-export type QiitaTags = Array<{ name: string, versions: string[] }>
+export type QiitaTags = Array<{ name: string; versions: string[] }>
 
 // 記事のタイトル
 export type QiitaTitle = string
