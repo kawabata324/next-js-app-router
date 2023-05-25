@@ -1,13 +1,31 @@
-import Image from 'next/image'
+import { QiitaArticles } from "@/app/types";
 
-export default function Home() {
+async function getArticles() {
+  const url = " https://qiita.com//api/v2/authenticated_user/items"
+  const accessToken = process.env.QIITA_ACCESS_TOKEN
+  const res = await fetch(url, {
+    cache: "no-store",
+    headers: {
+      Authorization: `Bearer ${accessToken}`
+    }
+  })
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch article")
+  }
+  const data = await res.json()
+  return data as QiitaArticles
+}
+
+export default async function Home() {
+  const articles = await getArticles()
   return (
     <main>
       <h1>新着記事</h1>
       <ul>
-        <li>記事1</li>
-        <li>記事2</li>
-        <li>記事3</li>
+        {articles.map((article) => (
+          <li key={article.id}>{article.title}</li>
+        ))}
       </ul>
     </main>
   )
