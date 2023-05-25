@@ -4,7 +4,7 @@ async function getArticles() {
   const url = " https://qiita.com//api/v2/authenticated_user/items"
   const accessToken = process.env.QIITA_ACCESS_TOKEN
   const res = await fetch(url, {
-    cache: "no-store",
+    // cache: "no-store",
     headers: {
       Authorization: `Bearer ${accessToken}`
     }
