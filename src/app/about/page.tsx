@@ -1,5 +1,5 @@
-import { Main } from "@/app/components/main"
+import { CanvasBase } from "@/app/components/canvasBase"
 
 export default function About() {
-  return <Main />
+  return <CanvasBase />
 }
