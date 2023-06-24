@@ -1,11 +1,15 @@
-"use client"
+import { PostsRepository } from "@/context/repositories/qiita/PostsRepository"
+import { Posts } from "./_components/Posts"
 
-import { Button } from "@mantine/core"
+async function fetchPosts() {
+  return await PostsRepository.fetchPosts()
+}
 
-export default function Home() {
+export default async function Home() {
+  const posts = await fetchPosts()
   return (
     <main>
-      <Button>Click me!</Button>
+      <Posts posts={posts} />
     </main>
   )
 }
