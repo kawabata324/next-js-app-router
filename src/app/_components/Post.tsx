@@ -11,7 +11,17 @@ type Props = {
 
 export const Post: FC<Props> = ({ post }) => (
   <Card
-    sx={{ display: "flex", flexDirection: "column", gap: 24, justifyContent: "center" }}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      gap: 24,
+      justifyContent: "center",
+      backgroundImage: `url("/images/qiita.png")`,
+      backgroundSize: "cover",
+      backgroundColor: "rgba(255,255,255, 0.9)",
+      backgroundBlendMode: "lighten",
+      height: "100%",
+    }}
     shadow="sm"
     padding="lg"
     radius="md"

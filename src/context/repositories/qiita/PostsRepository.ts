@@ -1,7 +1,7 @@
 import { Posts } from "@/context/models/post/type"
 import { PostsConvertor } from "./PostsConvertor"
-import { BaseUrl } from "@/functions/BaseUrl"
 import { BaseHeaders } from "@/functions/BaseHeaders"
+import { BASE_URL } from "@/constants/baseUrl"
 
 //https://qiita.com/api/v2/docs#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97
 type QiitaGroup = {
@@ -66,12 +66,12 @@ export class PostsRepository {
   static readonly MAX_POST_PER_PAGE = 20
 
   static async fetchPosts(): Promise<Posts> {
+    const { QIITA_API_V2_URL } = BASE_URL
     const param = `page=${PostsRepository.MAX_PAGE_LENGTH}&per_page=${PostsRepository.MAX_POST_PER_PAGE}`
-    const res = await fetch(`${BaseUrl.QIITA_API_V2_URL}/authenticated_user/items?${param}`, {
+    const res = await fetch(`${QIITA_API_V2_URL}/authenticated_user/items?${param}`, {
       headers: BaseHeaders.getQiitaBaseHeader(),
     })
 
-    console.log(res)
     if (!res.ok) {
       throw new Error("予期せぬErrorが発生しました。")
     }
