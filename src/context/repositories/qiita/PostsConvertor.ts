@@ -1,6 +1,6 @@
 import { Posts } from "@/context/models/post/type"
-import { QiitaPosts } from "./PostsRepository"
 import { UTCString } from "@/functions/UTCString"
+import { QiitaPosts } from "./type"
 
 export class PostsConvertor {
   static convertPosts(data: QiitaPosts): Posts {
@@ -19,6 +19,7 @@ export class PostsConvertor {
           updatedAt: updatedAt,
           tags: post.tags.filter((tag) => tag.name).map((tag) => tag.name),
           likesCount: post.likes_count,
+          url: post.url,
         }
       })
   }

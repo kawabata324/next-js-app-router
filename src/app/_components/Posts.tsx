@@ -14,7 +14,9 @@ export const Posts: FC<Props> = ({ posts }) => {
     <Grid>
       {posts.map((post) => (
         <Grid.Col md={6} lg={3} key={post.id}>
-          <Post key={post.id} post={post} />
+          <a href={post.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+            <Post post={post} />
+          </a>
         </Grid.Col>
       ))}
     </Grid>

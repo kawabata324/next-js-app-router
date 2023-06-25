@@ -5,6 +5,7 @@ export type Post = {
   updatedAt: string
   tags: string[] // tagNameの配列
   likesCount: number
+  url: string
 }
 
 export type Posts = Array<Post>
