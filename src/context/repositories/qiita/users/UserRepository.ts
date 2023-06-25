@@ -1,10 +1,10 @@
 import { BASE_URL } from "@/constants/baseUrl"
-import { QiitaUser } from "./type"
+import { QiitaUser } from "../type"
 import { User, Users } from "@/context/models/user/type"
 import { UserConvertor } from "./UserConvertor"
 
 export class UserRepository {
-  static async fetchUsersByUserIds(userIds: string[]): Promise<Users> {
+  static async fetchUsersByUserIds(userIds: readonly string[]): Promise<Users> {
     const promises = userIds.map(async (userId) => {
       const user = await UserRepository.fetchUserById(userId)
       return user

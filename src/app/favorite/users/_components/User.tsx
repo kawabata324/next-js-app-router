@@ -1,15 +1,17 @@
 "use client"
 
 import { Avatar, Text, Button, Paper } from "@mantine/core"
+import Link from "next/link"
 import { FC } from "react"
 
 interface Props {
+  id: string
   avatarImageUrl: string
   name: string
   description: string
 }
 
-export const User: FC<Props> = ({ avatarImageUrl, name, description }) => {
+export const User: FC<Props> = ({ id, avatarImageUrl, name, description }) => {
   return (
     <Paper
       radius="md"
@@ -28,7 +30,7 @@ export const User: FC<Props> = ({ avatarImageUrl, name, description }) => {
       </Text>
 
       <Button variant="default" fullWidth mt="md">
-        投稿を見る
+        <Link href={`/favorite/${id}/posts`}>記事を見る</Link>
       </Button>
     </Paper>
   )

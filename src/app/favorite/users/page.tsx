@@ -1,9 +1,9 @@
-import { UserRepository } from "@/context/repositories/qiita/UserRepository"
+import { UserRepository } from "@/context/repositories/qiita/users/UserRepository"
 import { Users } from "./_components/Users"
+import { USER_IDS } from "./_constants/userIds"
 
 async function fetchUsers() {
-  const userIds = ["Yametaro", "uhyo", "honey32", "suin", "os1ma"]
-  return await UserRepository.fetchUsersByUserIds(userIds)
+  return await UserRepository.fetchUsersByUserIds(USER_IDS)
 }
 
 export default async function Page() {

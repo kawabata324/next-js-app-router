@@ -1,4 +1,4 @@
-import { PostsRepository } from "@/context/repositories/qiita/PostsRepository"
+import { PostsRepository } from "@/context/repositories/qiita/posts/PostsRepository"
 import { Posts } from "./_components/Posts"
 
 async function fetchPosts() {

@@ -1,5 +1,5 @@
 import { Users, User } from "@/context/models/user/type"
-import { QiitaUsers, QiitaUser } from "./type"
+import { QiitaUsers, QiitaUser } from "../type"
 
 export class UserConvertor {
   static convertUsers(data: QiitaUsers): Users {

@@ -14,7 +14,7 @@ export const Users: FC<Props> = ({ users }) => {
     <Grid>
       {users.map((user) => (
         <Grid.Col md={6} lg={3} key={user.id}>
-          <User avatarImageUrl={user.profileImageUrl} name={user.name} description={user.description} />
+          <User id={user.id} avatarImageUrl={user.profileImageUrl} name={user.name} description={user.description} />
         </Grid.Col>
       ))}
     </Grid>
